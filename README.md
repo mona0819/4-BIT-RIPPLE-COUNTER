@@ -27,14 +27,33 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 /* write all the steps invloved */
 
 **PROGRAM**
+```
+module Bit_ripple_counter (
+    input  wire clk,
+    input  wire reset,
+    output reg [3:0] q
+);
+
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            q <= 4'b0000;
+        else
+            q <= q + 1'b1;   // increments like a ripple counter
+    end
+
+endmodule
+```
 
 /* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
 
- Developed by: RegisterNumber:
+ Developed by: Mohana Priya D RegisterNumber: 25016734
 */
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
+<img width="1920" height="1080" alt="bit ripple counter" src="https://github.com/user-attachments/assets/28c4793c-0b9c-4ced-8d38-7bad80a94ef3" />
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
+<img width="1312" height="323" alt="image" src="https://github.com/user-attachments/assets/e70251f0-4d39-4a50-8155-b0ca3d02adfc" />
 
 **RESULTS**
+Thus 4-BIT-RIPPLE-COUNTER is verified successfully.
